@@ -6,8 +6,9 @@ import { AddProduitsComponent } from './add-produits/add-produits.component';
 const routes: Routes = [
   {path : "produits", component  : ProduitsComponent},
   {path: "add-produit", component : AddProduitsComponent},
-  { path: "", redirectTo: "produits", pathMatch: "full" }
-];
+  { path: "", redirectTo: "produits", pathMatch: "full" },
+  { path: 'addProduit', component: AddProduitsComponent }
+]; 
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

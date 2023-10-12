@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { OnInit } from '@angular/core';
+import { Produit } from '../model/produit.model';
+import { ProduitService } from '../services/produit.service';
 
 
 @Component({
@@ -7,12 +9,14 @@ import { OnInit } from '@angular/core';
   templateUrl: './produits.component.html',
 })
 export class ProduitsComponent  implements OnInit {
-  produits : string[];
+  produits? : Produit[]; 
+  private produitService= new ProduitService();
 
-  constructor() { 
-    this.produits = ["PC Asus", "Imprimante Epson", "Tablette Samsung"];
+  constructor () { 
+    //this.produits=[];
   }
 ngOnInit(): void {
+  this.produits = this.produitService.listeProduit();
 
 }
 
