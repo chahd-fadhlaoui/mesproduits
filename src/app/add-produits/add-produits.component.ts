@@ -17,7 +17,7 @@ export class AddProduitsComponent implements OnInit {
   ngOnInit() {
   }
   addProduit(){
-    //console.log(this.newProduit);
+    console.log(this.newProduit);
       this.produitService.ajouterProduit(this.newProduit);
       this.message="produit"+ " "+this.newProduit.nomProduit +" "+ "ajouté avec succés";
     }

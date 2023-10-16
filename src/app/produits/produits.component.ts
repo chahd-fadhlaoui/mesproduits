@@ -10,14 +10,21 @@ import { ProduitService } from '../services/produit.service';
 })
 export class ProduitsComponent  implements OnInit {
   produits? : Produit[]; 
-  private produitService= new ProduitService();
+  
 
-  constructor () { 
-    //this.produits=[];
+  constructor (private produitService : ProduitService) { 
+    this.produits=[];
   }
 ngOnInit(): void {
   this.produits = this.produitService.listeProduit();
 
+}
+supprimerProduit(prod : Produit)
+{
+  //console.log(prod);
+  let conf = confirm("Etes-vous sûr ?");
+  if (conf)
+  this.produitService.supprimerProduit(prod);
 }
 
 }
